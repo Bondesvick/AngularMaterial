@@ -1,22 +1,8 @@
 {
   "courses": [
     {
-      "id": 1,
-      "title": "Hello Angular",
-      "description": "Angular tutorial course",
-      "percentage": 20,
-      "favorite": true
-    },
-    {
-      "id": 2,
-      "title": "Hello React",
-      "description": "React tutorial course",
-      "percentage": 0,
-      "favorite": false
-    },
-    {
       "id": 3,
-      "title": "Hello C#",
+      "title": "Hello C# Best",
       "description": "C# tutorial course",
       "percentage": 40,
       "favorite": true
@@ -29,20 +15,6 @@
       "favorite": true
     },
     {
-      "id": 5,
-      "title": "Hello VB.NET",
-      "description": "Visual Basic tutorial course",
-      "percentage": 30,
-      "favorite": false
-    },
-    {
-      "id": 6,
-      "title": "Hello VUE",
-      "description": "VUE js tutorial course",
-      "percentage": 10,
-      "favorite": false
-    },
-    {
       "id": 7,
       "title": "Hello NODEjs",
       "description": "NODE js tutorial course",
@@ -51,7 +23,7 @@
     },
     {
       "id": 8,
-      "title": "Hello JAVA",
+      "title": "Hello JAVA3",
       "description": "Java tutorial course",
       "percentage": 56,
       "favorite": false
@@ -87,22 +59,8 @@
     {
       "id": 13,
       "title": "Software Engineer",
-      "description": "hello",
-      "percentage": 24,
-      "favorite": true
-    },
-    {
-      "id": 14,
-      "title": "fffffdfdf",
-      "description": "fdfdfdfdf",
-      "percentage": 41,
-      "favorite": true
-    },
-    {
-      "id": 15,
-      "title": "Software Engineer",
-      "description": "fdfdfdfdf",
-      "percentage": 51,
+      "description": "C# tutorial course",
+      "percentage": 27,
       "favorite": true
     }
   ]

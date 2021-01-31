@@ -1,0 +1,58 @@
+
+    <mat-card-header>
+        <mat-card-title>Course Form</mat-card-title>
+        <mat-card-subtitle>Edit Course</mat-card-subtitle>
+    </mat-card-header>
+
+    <form #form1="ngForm" (submit)="saveCourse.emit(course)" class="azform">
+        <mat-card-content>
+        
+            <mat-form-field class="example-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="title"
+                name="title" required type="text"
+                [(ngModel)]="course.title">
+            
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="description"
+                name="description" required type="text"
+                [(ngModel)]="course.description">
+            
+            </mat-form-field>
+
+            <section>
+                <h4>{{course?.percentage}}% Percent</h4>
+                <mat-slider
+                min="0"
+                max="100"
+                name="percentage"
+                thumbLabel
+                [(ngModel)]="course.percentage">
+                </mat-slider>
+            </section>
+
+            <section>
+                <mat-checkbox name="favorite"
+                [(ngModel)]="course.favorite"></mat-checkbox> 
+            </section>
+        </mat-card-content>
+    
+        <mat-card-actions align="start">
+            <button [disabled]="form1.invalid" mat-raised-button color="primary" type="submit">Submit</button>
+
+            <button mat-button type="reset" (click)="cancelCourse.emit()">Cancel</button>
+        </mat-card-actions>
+    </form>
+    
+    <mat-card-content>
+        <span *ngIf="course; else elseBlock">{{course?.title}}</span>
+        <ng-template #elseBlock>No lesson yet</ng-template>
+    </mat-card-content>
+
+    <mat-card-footer>
+        <pre>{{form1.value | json}}</pre>
+        <pre>{{form1.valid | json}}</pre>
+    </mat-card-footer>

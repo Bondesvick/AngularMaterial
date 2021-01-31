@@ -15,8 +15,7 @@ export class ItemsComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.resetLesson();
-    this.loadCourses();
+    this.refreshCourses();
   }
 
   loadCourses(){
@@ -36,15 +35,19 @@ export class ItemsComponent implements OnInit {
     this.selectedLesson = emptyLesson;
   }
 
+  refreshCourses(){
+    this.resetLesson()
+    this.loadCourses()
+  }
 
   saveLesson(course){
     if(course.id){
-      this.bookService.update(course);
+      this.bookService.update(course)
+      .subscribe(result => this.refreshCourses());;
     } else{
       this.bookService.create(course)
-      .subscribe(result => this.loadCourses());
+      .subscribe(result => this.refreshCourses());
     }
-    
   }
 
   selectLesson(lesson){
@@ -56,8 +59,8 @@ export class ItemsComponent implements OnInit {
   }
 
   deleteLesson(lessonId){
-    console.log(lessonId);
-    this.bookService.delete(lessonId);
+    this.bookService.delete(lessonId)
+    .subscribe(result => this.refreshCourses());
   }
 
 }

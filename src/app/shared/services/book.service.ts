@@ -1,50 +1,41 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const BASE_URL = "http://localhost:3001/";
+const BASE_URL = "http://localhost:3000/";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class BookService {
-  private model ="courses";
-
-  private courseLessons = [
-    {id: 1, title: "Hello Angular",percentage: 20, favorite: false},
-    {id: 2, title: "Hello Victor" ,percentage: 60, favorite: true},
-    {id: 3, title: "Another one", percentage: 10, favorite: false},
-    {id: 4, title: "Hello Harry", percentage: 45, favorite: true},
-    {id: 5, title: "Hello Harry", percentage: 20, favorite: true},
-    {id: 6, title: "Hello Harry", percentage: 0, favorite: false},
-    {id: 7, title: "Hello Harry", percentage: 2, favorite: true},
-    {id: 8, title: "Hello Harry", percentage: 20, favorite: false},
-    {id: 9, title: "Hello Harry", percentage: 20, favorite: false},
-    {id: 10, title: "Hello Harry", percentage: 20, favorite: false}
-  ]
+  private model ="courses/";
 
   constructor(private http: HttpClient) { }
 
   private getUrl = () => `${BASE_URL}${this.model}`;
-  
 
+  private getUrlById = (id) => `${this.getUrl()}${id}`;
+  
   all(){
     return this.http.get(this.getUrl());
   }
 
-  find(bookId){
-
+  find(courseId){
+      return this.getUrlById(courseId);
   }
 
   create(course){
     return this.http.post(this.getUrl(), course)
   }
 
-  update(book){
-    console.log("update book", book)
+  update(course){
+    //console.log("update book", book)
+    return this.http.put(this.getUrlById(course.id), course)
   }
 
-  delete(bookId){
-    console.log("delete book", bookId)
+  delete(courseId){
+    //console.log("delete book", bookId)
+    return this.http.delete(this.getUrlById(courseId));
   }
+  
 }

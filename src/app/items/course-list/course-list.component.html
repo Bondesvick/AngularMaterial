@@ -1,0 +1,28 @@
+
+    <mat-card-header>
+        <mat-card-title>Course List</mat-card-title>
+    </mat-card-header>
+   
+
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item matRipple
+            [matRippleCentered]="false"
+            [matRippleDisabled]="false"
+            [matRippleUnbounded]="false"
+            [matRippleRadius]="700"
+            [matRippleColor]="" 
+            role="listitem" *ngFor="let item of courseLessons"
+            (click)="selectLesson.emit(item)">
+
+                    <h3 matLine>{{item.title}}</h3>
+                    <small matLine>{{item.description}}</small>
+
+                    <button mat-button color="warn"
+                        (click)="deleteLesson.emit(item.id);$event.stopImmediatePropagation()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    
+            </mat-list-item>
+      </mat-list>
+    </mat-card-content>
