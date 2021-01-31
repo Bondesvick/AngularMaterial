@@ -17,7 +17,8 @@ export class ItemsComponent implements OnInit {
   ngOnInit(): void {
     this.resetLesson();
     console.log("hello")
-    this.courseLessons = this.bookService.all();
+    this.bookService.all()
+    .subscribe(courses => this.courseLessons = courses);
     
   }
 
@@ -36,7 +37,8 @@ export class ItemsComponent implements OnInit {
     if(lesson.id){
       this.bookService.update(lesson);
     } else{
-      this.bookService.create(lesson);
+      this.bookService.create(lesson)
+      .subscribe(result => console.log("COURSE CREATED", result));
     }
     
   }

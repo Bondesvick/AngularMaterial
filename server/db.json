@@ -1,0 +1,88 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Hello Angular",
+      "percentage": 20,
+      "favorite": true
+    },
+    {
+      "id": 2,
+      "title": "Hello React",
+      "percentage": 0,
+      "favorite": false
+    },
+    {
+      "id": 3,
+      "title": "Hello C#",
+      "percentage": 40,
+      "favorite": true
+    },
+    {
+      "id": 4,
+      "title": "Hello ASP",
+      "percentage": 25,
+      "favorite": true
+    },
+    {
+      "id": 5,
+      "title": "Hello VB.NET",
+      "percentage": 30,
+      "favorite": false
+    },
+    {
+      "id": 6,
+      "title": "Hello VUE",
+      "percentage": 10,
+      "favorite": false
+    },
+    {
+      "id": 7,
+      "title": "Hello NODEjs",
+      "percentage": 90,
+      "favorite": true
+    },
+    {
+      "id": 8,
+      "title": "Hello JAVA",
+      "percentage": 56,
+      "favorite": false
+    },
+    {
+      "id": 9,
+      "title": "Hello SQL",
+      "percentage": 74,
+      "favorite": true
+    },
+    {
+      "id": 10,
+      "title": "Hello PHP",
+      "percentage": 40,
+      "favorite": false
+    },
+    {
+      "id": 11,
+      "title": "Hello EXPRESS",
+      "percentage": 30,
+      "favorite": true
+    },
+    {
+      "id": 12,
+      "title": "Hello NEXTjs",
+      "percentage": 21,
+      "favorite": true
+    },
+    {
+      "id": 13,
+      "title": "jhjh",
+      "percentage": 39,
+      "favorite": true
+    },
+    {
+      "id": 14,
+      "title": "jhjh",
+      "percentage": 39,
+      "favorite": true
+    }
+  ]
+}

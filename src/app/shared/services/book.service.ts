@@ -1,9 +1,14 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+const BASE_URL = "http://localhost:3001/";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookService {
+  private model ="courses";
 
   private courseLessons = [
     {id: 1, title: "Hello Angular",percentage: 20, favorite: false},
@@ -18,18 +23,21 @@ export class BookService {
     {id: 10, title: "Hello Harry", percentage: 20, favorite: false}
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  private getUrl = () => `${BASE_URL}${this.model}`;
+  
 
   all(){
-    return this.courseLessons;
+    return this.http.get(this.getUrl());
   }
 
   find(bookId){
 
   }
 
-  create(book){
-    console.log("create book", book)
+  create(course){
+    return this.http.post(this.getUrl(), course)
   }
 
   update(book){
