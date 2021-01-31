@@ -1,0 +1,87 @@
+<div class="main">
+    <mat-card class="card1">
+    
+        <!-- <pre>{{courseLessons | json}}</pre> -->
+    
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item matRipple
+                [matRippleCentered]="false"
+                [matRippleDisabled]="false"
+                [matRippleUnbounded]="false"
+                [matRippleRadius]="700"
+                [matRippleColor]="" 
+                role="listitem" *ngFor="let item of courseLessons"
+                (click)="selectLesson(item)">
+                        <h3 matLine>{{item.title}}</h3>
+                        <button mat-button color="warn"
+                            (click)="deleteLesson(item.id);$event.stopImmediatePropagation()">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        
+                </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+            
+    </mat-card>
+    
+    <mat-card class="card2">
+        <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>Subtitle</mat-card-subtitle>
+        </mat-card-header>
+
+        <form #form1="ngForm" (submit)="saveLesson(selectedLesson)">
+            <mat-card-content>
+                <!-- <mat-divider></mat-divider> -->
+                <mat-form-field>
+                    
+                    <input matInput placeholder="tilte"
+                    name="title" required type="text"
+                    [(ngModel)]="selectedLesson.title">
+                
+                </mat-form-field>
+    
+                <!-- <mat-divider></mat-divider> -->
+    
+                <section>
+                    <h4>{{selectedLesson.percentage}}% Percent</h4>
+                    <mat-slider
+                    min="0"
+                    max="100"
+                    name="percentage"
+                    thumbLabel
+                    [(ngModel)]="selectedLesson.percentage">
+                    </mat-slider>
+                </section>
+                <!-- <mat-divider></mat-divider>  -->
+    
+                <section>
+                    <mat-checkbox name="favorite"
+                    [(ngModel)]="selectedLesson.favorite"></mat-checkbox> 
+                </section>
+            </mat-card-content>
+        
+            <mat-card-actions align="start">
+                <button [disabled]="form1.invalid" mat-raised-button color="primary" type="submit">Submit</button>
+                <!-- <mat-divider></mat-divider> -->
+                <button mat-button (click)="cancel()">Cancel</button>
+            </mat-card-actions>
+        </form>
+        
+        <mat-card-content>
+            <span *ngIf="selectedLesson; else eleBlock">{{selectedLesson.title}}</span>
+            <ng-template #eleBlock>No lesson yet</ng-template>
+            
+            
+            {{selectedLesson?.title}}
+        </mat-card-content>
+
+        <mat-card-footer>
+            <pre>{{form1.value | json}}</pre>
+            <pre>{{form1.valid | json}}</pre>
+        </mat-card-footer>
+       
+    </mat-card>
+    
+</div>

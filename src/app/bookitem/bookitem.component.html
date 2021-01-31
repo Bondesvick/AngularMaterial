@@ -1,0 +1,50 @@
+<p>bookitem works!</p>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Title</mat-card-title>
+        <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+
+    <form #form1="ngForm" (submit)="saveBook(selectectBook)">
+        <mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-form-field>
+                
+                <input matInput placeholder="tilte"
+                name="title" required type="text"
+                [(ngModel)]="selectectBook.title">
+            
+            </mat-form-field>
+
+            <!-- <mat-divider></mat-divider> -->
+
+            <section>
+                <h4>{{selectectBook.percentage}}% Percent</h4>
+                <mat-slider
+                min="0"
+                max="100"
+                name="percentage"
+                thumbLabel
+                [(ngModel)]="selectectBook.percentage">
+                </mat-slider>
+            </section>
+            <!-- <mat-divider></mat-divider>  -->
+
+            <section>
+                <mat-checkbox name="favorite"
+                [(ngModel)]="selectectBook.favorite"></mat-checkbox> 
+            </section>
+        </mat-card-content>
+    
+        <mat-card-actions align="start">
+            <button [disabled]="form1.invalid" mat-raised-button color="primary" type="submit">Submit</button>
+            <mat-divider></mat-divider>
+            <button mat-button (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+    </form>
+    <mat-card-footer>
+        <pre>{{form1.value | json}}</pre>
+        <pre>{{form1.valid | json}}</pre>
+    </mat-card-footer>
+</mat-card>

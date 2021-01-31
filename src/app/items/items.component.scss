@@ -1,0 +1,18 @@
+.main{
+
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: center;
+
+
+    .card1{
+        flex: 1 1;
+        margin: 5px;
+    }
+
+    .card2{
+        flex: 1 1;
+        margin: 5px;
+    }
+}

@@ -1,0 +1,33 @@
+<mat-drawer-container class="example-container" autosize>
+   
+  
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+
+        <button mat-raised-button color="primary" type="button" (click)="toggeleNav()">Show</button>
+        
+        <router-outlet></router-outlet>
+        
+      
+    </div>
+</mat-drawer-container>
