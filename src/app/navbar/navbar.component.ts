@@ -29,6 +29,12 @@ fillerContent = Array.from({length: 50}, () =>
   this.mobileQuery.addListener(this._mobileQueryListener);
    }
 
+   links =[
+     {path: "/home", icon: "home", title: "Home"},
+     {path: "/items", icon: "view_list", title: "Courses"},
+     {path: "/bookitems", icon: "book", title: "Books"}
+    ]
+
   ngOnInit(): void {
   }
 
