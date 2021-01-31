@@ -7,7 +7,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CourseDetailsComponent{
 
-@Input() course;
+selectedCourse;
+originalTitle;
+
 @Output() saveCourse = new EventEmitter();
 @Output() cancelCourse = new EventEmitter();
+
+@Input() set course(value){
+  if(value){
+    this.selectedCourse = Object.assign({}, value);
+    this.originalTitle = value.title;
+  }
+};
 }

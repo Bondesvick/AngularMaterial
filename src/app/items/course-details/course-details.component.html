@@ -1,17 +1,20 @@
 
     <mat-card-header>
-        <mat-card-title>Course Form</mat-card-title>
-        <mat-card-subtitle>Edit Course</mat-card-subtitle>
+        <mat-card-title>
+            <span *ngIf="selectedCourse.id; else elseBlock">{{originalTitle}}</span>
+            <ng-template #elseBlock>No lesson yet</ng-template>
+        </mat-card-title>
+        
     </mat-card-header>
 
-    <form #form1="ngForm" (submit)="saveCourse.emit(course)" class="azform">
+    <form #form1="ngForm" (submit)="saveCourse.emit(selectedCourse)" class="azform">
         <mat-card-content>
         
             <mat-form-field class="example-full-width">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="title"
                 name="title" required type="text"
-                [(ngModel)]="course.title">
+                [(ngModel)]="selectedCourse.title">
             
             </mat-form-field>
 
@@ -19,24 +22,24 @@
                 <mat-label>Description</mat-label>
                 <input matInput placeholder="description"
                 name="description" required type="text"
-                [(ngModel)]="course.description">
+                [(ngModel)]="selectedCourse.description">
             
             </mat-form-field>
 
             <section>
-                <h4>{{course?.percentage}}% Percent</h4>
+                <h4>{{selectedCourse?.percentage}}% Percent</h4>
                 <mat-slider
                 min="0"
                 max="100"
                 name="percentage"
                 thumbLabel
-                [(ngModel)]="course.percentage">
+                [(ngModel)]="selectedCourse.percentage">
                 </mat-slider>
             </section>
 
             <section>
                 <mat-checkbox name="favorite"
-                [(ngModel)]="course.favorite"></mat-checkbox> 
+                [(ngModel)]="selectedCourse.favorite"></mat-checkbox> 
             </section>
         </mat-card-content>
     
@@ -47,10 +50,10 @@
         </mat-card-actions>
     </form>
     
-    <mat-card-content>
-        <span *ngIf="course; else elseBlock">{{course?.title}}</span>
+    <!-- <mat-card-content>
+        <span *ngIf="course; else elseBlock">{{selectedCourse?.title}}</span>
         <ng-template #elseBlock>No lesson yet</ng-template>
-    </mat-card-content>
+    </mat-card-content> -->
 
     <mat-card-footer>
         <pre>{{form1.value | json}}</pre>
