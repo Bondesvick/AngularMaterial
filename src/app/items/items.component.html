@@ -13,7 +13,10 @@
                 [matRippleColor]="" 
                 role="listitem" *ngFor="let item of courseLessons"
                 (click)="selectLesson(item)">
+
                         <h3 matLine>{{item.title}}</h3>
+                        <small matLine>{{item.description}}</small>
+
                         <button mat-button color="warn"
                             (click)="deleteLesson(item.id);$event.stopImmediatePropagation()">
                             <mat-icon>delete</mat-icon>
@@ -39,6 +42,14 @@
                     <input matInput placeholder="tilte"
                     name="title" required type="text"
                     [(ngModel)]="selectedLesson.title">
+                
+                </mat-form-field>
+
+                <mat-form-field>
+                    
+                    <input matInput placeholder="description"
+                    name="description" required type="text"
+                    [(ngModel)]="selectedLesson.description">
                 
                 </mat-form-field>
     
@@ -70,11 +81,8 @@
         </form>
         
         <mat-card-content>
-            <span *ngIf="selectedLesson; else eleBlock">{{selectedLesson.title}}</span>
+            <span *ngIf="selectedLesson; else eleBlock">{{selectedLesson?.title}}</span>
             <ng-template #eleBlock>No lesson yet</ng-template>
-            
-            
-            {{selectedLesson?.title}}
         </mat-card-content>
 
         <mat-card-footer>

@@ -16,16 +16,19 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetLesson();
-    console.log("hello")
+    this.loadCourses();
+  }
+
+  loadCourses(){
     this.bookService.all()
     .subscribe(courses => this.courseLessons = courses);
-    
   }
 
   resetLesson(){
     const emptyLesson ={
       id: null,
       title: "",
+      description: "",
       percentage: 0, 
       favorite: false
     }
@@ -33,12 +36,13 @@ export class ItemsComponent implements OnInit {
     this.selectedLesson = emptyLesson;
   }
 
-  saveLesson(lesson){
-    if(lesson.id){
-      this.bookService.update(lesson);
+
+  saveLesson(course){
+    if(course.id){
+      this.bookService.update(course);
     } else{
-      this.bookService.create(lesson)
-      .subscribe(result => console.log("COURSE CREATED", result));
+      this.bookService.create(course)
+      .subscribe(result => this.loadCourses());
     }
     
   }
