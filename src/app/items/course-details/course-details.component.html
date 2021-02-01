@@ -1,0 +1,61 @@
+
+    <mat-card-header>
+        <mat-card-title>
+            <span *ngIf="selectedCourse.id; else elseBlock">{{originalTitle}}</span>
+            <ng-template #elseBlock>No lesson yet</ng-template>
+        </mat-card-title>
+        
+    </mat-card-header>
+
+    <form #form1="ngForm" (submit)="saveCourse.emit(selectedCourse)" class="azform">
+        <mat-card-content>
+        
+            <mat-form-field class="example-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="title"
+                name="title" required type="text"
+                [(ngModel)]="selectedCourse.title">
+            
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="description"
+                name="description" required type="text"
+                [(ngModel)]="selectedCourse.description">
+            
+            </mat-form-field>
+
+            <section>
+                <h4>{{selectedCourse?.percentage}}% Percent</h4>
+                <mat-slider
+                min="0"
+                max="100"
+                name="percentage"
+                thumbLabel
+                [(ngModel)]="selectedCourse.percentage">
+                </mat-slider>
+            </section>
+
+            <section>
+                <mat-checkbox name="favorite"
+                [(ngModel)]="selectedCourse.favorite"></mat-checkbox> 
+            </section>
+        </mat-card-content>
+    
+        <mat-card-actions align="start">
+            <button [disabled]="form1.invalid" mat-raised-button color="primary" type="submit">Submit</button>
+
+            <button mat-button type="reset" (click)="cancelCourse.emit()">Cancel</button>
+        </mat-card-actions>
+    </form>
+    
+    <!-- <mat-card-content>
+        <span *ngIf="course; else elseBlock">{{selectedCourse?.title}}</span>
+        <ng-template #elseBlock>No lesson yet</ng-template>
+    </mat-card-content> -->
+
+    <mat-card-footer>
+        <pre>{{form1.value | json}}</pre>
+        <pre>{{form1.valid | json}}</pre>
+    </mat-card-footer>

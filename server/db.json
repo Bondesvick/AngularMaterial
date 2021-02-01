@@ -1,0 +1,67 @@
+{
+  "courses": [
+    {
+      "id": 3,
+      "title": "Hello C# Best1",
+      "description": "C# tutorial course",
+      "percentage": 40,
+      "favorite": true
+    },
+    {
+      "id": 4,
+      "title": "Hello ASP",
+      "description": "ASP tutorial course",
+      "percentage": 25,
+      "favorite": true
+    },
+    {
+      "id": 7,
+      "title": "Hello NODEjs",
+      "description": "NODE js tutorial course",
+      "percentage": 90,
+      "favorite": true
+    },
+    {
+      "id": 8,
+      "title": "Hello JAVA3",
+      "description": "Java tutorial course",
+      "percentage": 56,
+      "favorite": false
+    },
+    {
+      "id": 9,
+      "title": "Hello SQL",
+      "description": "SQL tutorial course",
+      "percentage": 74,
+      "favorite": true
+    },
+    {
+      "id": 10,
+      "title": "Hello PHP",
+      "description": "PHP tutorial course",
+      "percentage": 40,
+      "favorite": false
+    },
+    {
+      "id": 11,
+      "title": "Hello EXPRESS",
+      "description": "Express.js tutorial course",
+      "percentage": 30,
+      "favorite": true
+    },
+    {
+      "id": 12,
+      "title": "Hello NEXTjs",
+      "description": "Next.js tutorial course",
+      "percentage": 21,
+      "favorite": true
+    },
+    {
+      "id": 13,
+      "title": "Software Engineer",
+      "description": "C# tutorial course",
+      "percentage": 27,
+      "favorite": true
+    }
+  ]
+}

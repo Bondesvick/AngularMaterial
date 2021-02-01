@@ -13,6 +13,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
+import { CourseDetailsComponent } from './items/course-details/course-details.component';
+import { CourseListComponent } from './items/course-list/course-list.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { HomeComponent } from './home/home.component';
     BookitemComponent,
     NavbarComponent,
     SidenavComponent,
-    HomeComponent
+    HomeComponent,
+    CourseDetailsComponent,
+    CourseListComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
