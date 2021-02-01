@@ -15,6 +15,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailsComponent } from './items/course-details/course-details.component';
 import { CourseListComponent } from './items/course-list/course-list.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CourseListComponent } from './items/course-list/course-list.component';
     SidenavComponent,
     HomeComponent,
     CourseDetailsComponent,
-    CourseListComponent
+    CourseListComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

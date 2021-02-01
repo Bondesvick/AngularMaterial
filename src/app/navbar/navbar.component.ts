@@ -33,7 +33,8 @@ fillerContent = Array.from({length: 50}, () =>
    links =[
      {path: "/home", icon: "home", title: "Home"},
      {path: "/items", icon: "view_list", title: "Courses"},
-     {path: "/bookitems", icon: "book", title: "Books"}
+     {path: "/bookitems", icon: "book", title: "Books"},
+     {path: "/users", icon: "person", title: "Users"}
     ]
 
     logOut(){
