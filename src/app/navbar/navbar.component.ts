@@ -2,6 +2,7 @@
 
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +24,7 @@ fillerContent = Array.from({length: 50}, () =>
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   this._mobileQueryListener = () => changeDetectorRef.detectChanges();
   this.mobileQuery.addListener(this._mobileQueryListener);
@@ -34,6 +35,10 @@ fillerContent = Array.from({length: 50}, () =>
      {path: "/items", icon: "view_list", title: "Courses"},
      {path: "/bookitems", icon: "book", title: "Books"}
     ]
+
+    logOut(){
+      this.router.navigateByUrl("/login");
+    }
 
   ngOnInit(): void {
   }
