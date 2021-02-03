@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'items', component: ItemsComponent},
   {path: 'bookitems', component: BookitemComponent},
   {path: 'users', component: UsersComponent},
@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
-  {path: '**', redirectTo: './home'}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
