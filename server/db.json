@@ -36,13 +36,6 @@
       "favorite": true
     },
     {
-      "id": 10,
-      "title": "Hello PHP",
-      "description": "PHP tutorial course",
-      "percentage": 40,
-      "favorite": false
-    },
-    {
       "id": 11,
       "title": "Hello EXPRESS",
       "description": "Express.js tutorial course",
@@ -54,7 +47,7 @@
       "title": "Hello NEXTjs",
       "description": "Next.js tutorial course",
       "percentage": 21,
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 13,
@@ -62,6 +55,13 @@
       "description": "C# tutorial course",
       "percentage": 27,
       "favorite": true
+    },
+    {
+      "id": 14,
+      "title": "Angular Material",
+      "description": "Angular Material Design Tutorial",
+      "percentage": 27,
+      "favorite": false
     }
   ]
 }
