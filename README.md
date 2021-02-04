@@ -1,4 +1,6 @@
-# AngularWorkshop
+# Angular Material
+
+![Screenshot](https://raw.githubusercontent.com/Bondesvick/AngularMaterial/main/src/assets/screenshot.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
